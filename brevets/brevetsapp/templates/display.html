@@ -1,0 +1,40 @@
+<html>
+	<body>
+		<div class="row">
+               <div class="col-md-12">
+                  <table class="control_time_table" id='tab'>
+                     <tr>
+                        <th> Km </th>
+                        <th>Open</th>
+                        <th>Close</th>
+                     </tr>
+					 {% for article in items %}
+                     <tr class="control" id ='con'>
+                        <!-- Dist (km) -->
+                        <td><name="km" type="number" step="0.00001"
+                           min="0" max="1100" id='km' readonly value=""/> {{ article.km }} </td>
+                        <!-- Open time (read only, set by JavaScript function -->
+                        <td><name="open" type="datetime-local" readonly value="" style="font-size:15px" /> {{ article.open }} </td>
+                        <!-- Close time (read only, set by JavaScript function -->
+                        <td><name="close" type="datetime-local" readonly value="" style="font-size:15px" /> {{ article.close }} </td>
+                     </tr>
+                     {% endfor %}
+                  </table>
+               </div>
+               <!-- col -->
+			<div>
+                    <button id='calc'>Calculator</button>
+			</div>
+		<script type="text/javascript">
+			document.getElementById("calc").onclick = function(toCalc) {
+				location.href = window.location.origin
+			};
+		</script>
+	</div>
+	</body>
+</html>
+
+
+
+
+		
